@@ -1,8 +1,14 @@
 package com.example.diningReview.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@RequiredArgsConstructor
 @Table(name="Users")
 public class User {
     @Id

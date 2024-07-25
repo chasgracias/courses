@@ -1,6 +1,9 @@
 package com.example.diningReview.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -9,27 +12,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @RequiredArgsConstructor
-@Table(name="Reviews")
 public class Review {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(name = "submittedBy")
     private String submittedBy;
-
-    @Column(name = "restaurantId")
     private Long restaurantId;
+    private String review;
 
-    @Column(name = "peanutScore")
     private Integer peanutScore = null;
-
-    @Column(name = "eggScore")
     private Integer eggScore = null;
-
-    @Column(name = "diaryScore")
     private Integer diaryScore = null;
 
-    @Column(name = "overallScore")
-    private Integer overallScore = null;
+    private ReviewStatus status;
 }
